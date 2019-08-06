@@ -9,7 +9,7 @@ def map(array)
   new
 end
 
-def reduce(array, sp=0) #sp= start point
+def reduce(array, sp=nil) #sp= start point
   if sp
     accumulator = sp
     counter = 0
