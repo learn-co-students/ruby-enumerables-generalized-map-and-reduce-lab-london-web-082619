@@ -7,27 +7,29 @@
 #new_array = array.map{|n| n * -1}
 #new_array
 
-def map(s)
-  new = []
+def map(array)
+  new_map = []
   i = 0
-  while i < s.length
-    new.push(yield(s[i]))
+  while i < array.length
+    new_map.push(yield(array[i]))
     i += 1
   end
-  new
+  new_map
 end
 
-def reduce(s, sp=nil)
-  if sp
-    accum = sp
+
+
+def reduce(array, starting = 0)
+  if starting
+    accum = starting
     i = 0
   else
-    accum = s[0]
+    accum = array[0]
     i = 1
   end
-  while i < s.length
-    accum = yield(accum, s[i])
-    i += 1
-  end
+     while i < array.length do
+     accum = yield(accum, array[i])
+     i += 1
+     end
   accum
 end
