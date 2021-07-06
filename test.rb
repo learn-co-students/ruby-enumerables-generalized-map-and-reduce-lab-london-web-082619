@@ -1,13 +1,4 @@
-
-#def map_1(array)
-#new_array = array.map{|n| n * -1}
-#new_array
-#end
-#array = [1,2,3,-9]
-#new_array = array.map{|n| n * -1}
-#new_array
-
-def map(array)
+def map_test(array)
   new_map = []
   i = 0
   while i < array.length
@@ -17,7 +8,9 @@ def map(array)
   new_map
 end
 
+puts map_test([1,2,3,4,5]){|j| j*j }
 
+# {|j| j*j }  = called by yield. Method gives array[i] as argument. the argument is redefined in {} as j
 
 def reduce(array, starting = 0)
   if starting
@@ -33,3 +26,7 @@ def reduce(array, starting = 0)
      end
   accum
 end
+
+puts reduce([1,2,3,4,5]){|sum, j| sum + j }
+
+# {|j| j*j }  = called by yield. Method gives array[i] as argument. the argument is redefined in {} as j
